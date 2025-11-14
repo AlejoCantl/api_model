@@ -14,14 +14,14 @@ class TipoMaquinaEnum(enum.Enum):
 
 # ✅ CORRECCIÓN: Nombres coinciden con MySQL
 class ModeloEnum(enum.Enum):
-    Random_Forest = "Random Forest"
+    Random_Forest = "Random_Forest"
     XGBoost = "XGBoost"
     LightGBM = "LightGBM"
 
 # ✅ CORRECCIÓN: Nombres coinciden con MySQL
 class DecisionEnum(enum.Enum):
     FALLA = "FALLA"
-    NO_FALLA = "NO FALLA"  # ⚠️ Con espacio
+    NO_FALLA = "NO_FALLA"  # ⚠️ Con espacio
 
 # ==============================
 # TABLA: usuarios
