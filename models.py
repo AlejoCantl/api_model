@@ -1,5 +1,5 @@
 # models.py
-from sqlalchemy import Column, Integer, String, Float, DateTime, Enum, ForeignKey, Index, UniqueConstraint
+from sqlalchemy import Column, Integer, String, Float, DateTime, Enum, ForeignKey, Index
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.dialects.mysql import TINYINT
 import enum
@@ -12,14 +12,16 @@ class TipoMaquinaEnum(enum.Enum):
     M = "M"
     H = "H"
 
+# ✅ CORRECCIÓN: Nombres coinciden con MySQL
 class ModeloEnum(enum.Enum):
-    rf = "Random Forest"
-    xgb = "XGBoost"
-    lgbm = "LightGBM"
+    Random_Forest = "Random Forest"
+    XGBoost = "XGBoost"
+    LightGBM = "LightGBM"
 
+# ✅ CORRECCIÓN: Nombres coinciden con MySQL
 class DecisionEnum(enum.Enum):
-    falla = "FALLA"
-    no_falla = "NO FALLA"
+    FALLA = "FALLA"
+    NO_FALLA = "NO FALLA"  # ⚠️ Con espacio
 
 # ==============================
 # TABLA: usuarios
@@ -33,7 +35,7 @@ class Usuario(Base):
     nombre = Column(String(100))
     apellido = Column(String(100))
     usuario = Column(String(100), unique=True, nullable=False)
-    contraseña = Column(String(100))  # ¡Hashéala en producción!
+    contraseña = Column(String(100))
     fecha_registro = Column(DateTime, default=datetime.utcnow)
 
 # ==============================
